@@ -1,0 +1,134 @@
+*, *::before, *::after {
+  text-decoration: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p, span{ line-height: 100%; }
+button{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+p, span, li, th, td{ font-size: 16px; }
+
+table{ border-collapse: collapse; }
+td, th{
+  border: 1px solid black;
+}
+
+input, select{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 5px;
+  outline: none;
+}
+
+main{
+  margin: 40px 25px;
+}
+
+.user-input{
+  display: flex;
+  justify-content: center;
+}
+.user-input form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 500px;
+}
+.user-input p{
+  margin-bottom: 5px;
+}
+.user-input :is(.memory-size, .time-compaction, .coalescing-hole) input{
+  padding: 3px;
+  border: 1px solid hsl(222, 2%, 20%);
+}
+.user-input #algorithm{
+  max-width: 140px;
+  width: 100%;
+}
+.user-input table tr :first-child{
+  text-align: center;
+}
+.user-input .add-job{
+  width: fit-content;
+  margin-top: 5px;
+  align-self: center;
+}
+.user-input .add-job:hover{
+  text-decoration: underline;
+}
+.user-input .jobs{
+  display: flex;
+  flex-direction: column;
+}
+.user-input table input{
+  width: 100%;
+  padding: 5px;
+  border: none;
+}
+.user-input .bottom button{
+  padding: 7px 19px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.simulation .top{
+  margin-bottom: 25px;
+}
+.simulation .infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.simulation table tbody tr :nth-child(n + 3){
+  text-align: center;
+  width: 1.5lh;
+}
+.simulation aside{
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 350px;
+  height: 450px;
+  margin-inline: auto;
+  border: 1px solid black;
+}
+.simulation aside div{
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  border: 3px groove hsl(190, 100%, 50%);
+}
+.simulation .bottom section{
+  counter-reset: num;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+}
+.simulation .bottom section div{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+  border: 1px solid black;
+}
+.simulation .bottom section div::before{
+  counter-increment: num;
+  content: counter(num);
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, -100%);
+}

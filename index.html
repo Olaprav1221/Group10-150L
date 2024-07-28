@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <article class="user-input">
+      <form>
+        <div class="memory-size">
+          <p>Memory Size(MB):</p>
+          <input type="number" name="memorySize" id="memorySize" min="1" step="0.01" required>
+        </div>
+        <div class="time-compaction">
+          <p>Time Compaction:</p>
+          <input type="number" name="timeCompaction" id="timeCompaction" min="1" required>
+        </div>
+        <div class="coalescing-hole">
+          <p>Coalescing Hole:</p>
+          <input type="number" name="coalescingHole" id="coalescingHole" min="1" required>
+        </div>
+        <div class="algorithm">
+          <p>Algorithm:</p>
+          <select name="algorithm" id="algorithm">
+            <option value="First Fit">First-fit</option>
+            <option value="Best Fit">Best-fit</option>
+            <option value="Worst Fit">Worst-fit</option>
+          </select>
+        </div>
+        <div class="jobs">
+          <table>
+            <thead>
+              <tr>
+                <th>Job Number</th>
+                <th>Size(KB)</th>
+                <th>Time Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="number" name="size1" id="size1" min="10" required>
+                </td>
+                <td>
+                  <input type="number" name="timeUnit1" id="timeUnit1" min="1" required>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="add-job" onclick="addRow()">+ add job</button>
+        </div>
+        <div class="bottom">
+          <button type="submit">Start</button>
+        </div>
+      </form>
+    </article>
+    <article class="simulation" style="display: none;">
+      <div class="top">
+        <div class="infos">
+          <table class="timeUnitTable"></table>
+        </div>
+        <div>
+          <aside></aside>
+        </div>
+      </div>
+      <div class="bottom">
+        <section></section>
+      </div>
+    </article>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
